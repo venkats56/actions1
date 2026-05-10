@@ -2,7 +2,7 @@ name: Ascii workflow
 on: push
 jobs:
     Acii_job:
-        runs-on: ubnutu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: checkout Repo
               uses: actions/checkout@v6
