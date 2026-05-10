@@ -6,14 +6,18 @@ jobs:
         steps:
             - name: checkout Repo
               uses: actions/checkout@v6
-            - name: Install cowsay Progran
-              run: sudo apt-get install cowsay -y
-            - name: Execute Cowsay CMD
-              run:  cowsay -f dragon " Run for cover , I am dragon " >> dragon.txt
-            - name: Check the file exists 
-              run:  grep -i "dragon" dragon.txt
-            - name: Read file
-              run:  cat dragon.txt
+            # - name: Install cowsay Progran
+            #   run: sudo apt-get install cowsay -y
+            # - name: Execute Cowsay CMD
+            #   run:  cowsay -f dragon " Run for cover , I am dragon " >> dragon.txt
+            # - name: Check the file exists 
+            #   run:  grep -i "dragon" dragon.txt
+            # - name: Read file
+            #   run:  cat dragon.txt
             - name: list file
               run:  ls 
+            - name: Execute the script
+              run: |
+               chmod +x ascii-script.sh
+               ./ascii-script.sh
             
