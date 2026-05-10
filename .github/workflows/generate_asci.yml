@@ -15,9 +15,9 @@ jobs:
             # - name: Read file
             #   run:  cat dragon.txt
             - name: list file
-              run:  ls 
+              run:  ls  -R
             - name: Execute the script
               run: |
-               chmod +x ascii-script.sh
-               ./ascii-script.sh
+               chmod +x .github/workflows/ascii-script.sh
+               ./.github/workflows/ascii-script.sh
             
