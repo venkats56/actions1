@@ -1,7 +1,7 @@
 name: Ascii workflow
 on: push
 jobs:
-    Acii_job:
+    build_job1:
         runs-on: ubuntu-latest
         steps:
             - name: checkout Repo
@@ -14,10 +14,33 @@ jobs:
             #   run:  grep -i "dragon" dragon.txt
             # - name: Read file
             #   run:  cat dragon.txt
+            # - name: list file
+            #   run:  ls -ltra
+            # - name: Execute the script
+            #   run: |
+            #    chmod +x .github/workflows/ascii-script.sh
+            #    ./.github/workflows/ascii-script.sh
+            - name: Install cowsay Progran
+              run: sudo apt-get install cowsay -y
+            - name: Execute Cowsay CMD
+              run:  cowsay -f dragon " Run for cover , I am dragon " >> dragon.txt
+            - name: Sleep for 30 seconds
+              run: sleep 30
+    
+    test_job2:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Sleep for 10 seconds
+              run: sleep 10
+            - name: Check the file exists 
+              run:  grep -i "dragon" dragon.txt
+
+
+    deploy_job3:
+        runs-on: ubuntu-latest
+        steps:  
+            - name: Read file
+              run:  cat dragon.txt
             - name: list file
-              run:  ls -ltra
-            - name: Execute the script
-              run: |
-               chmod +x .github/workflows/ascii-script.sh
-               ./.github/workflows/ascii-script.sh
-            
+              run:  ls -ltra 
+                 
