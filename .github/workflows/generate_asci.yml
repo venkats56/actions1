@@ -15,5 +15,5 @@ jobs:
             - name: Read file
               run:  cat dragon.txt
             - name: list file
-              run:  ls -ltra
+              run:  ls 
             
