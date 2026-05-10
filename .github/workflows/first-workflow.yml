@@ -8,12 +8,19 @@ jobs:
         steps:
             - name: checkout Repo
               uses: actions/checkout@v6
-            - name: Welcome 
-              run: echo "this is my first workflows"
 
-            - name: List the files
-              run: ls
+            # Running multiple lines at once   
+            - name: Welcome 
+              run: |
+                echo "this is my first workflows"
+                ls -ltr
+                cat README.md
+
+
+
+            # - name: List the files
+            #   run: ls
             
-            - name: Read file
-              run: cat README.md
+            # - name: Read file
+            #   run: cat README.md
 
