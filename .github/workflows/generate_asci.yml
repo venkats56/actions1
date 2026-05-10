@@ -1,0 +1,19 @@
+name: Ascii workflow
+on: push
+jobs:
+    Acii_job:
+        runs-on: ubnutu-latest
+        steps:
+            - name: checkout Repo
+              uses: actions/checkout@v6
+            - name: Install cowsay Progran
+              run: sudo apt-get install cowsay -y
+            - name: Execute Cowsay CMD
+              run:  cowsay -f dragon " Run for cover , I am dragon " >> dragon.txt
+            - name: Check the file exists 
+              run:  grep -i "dragon" dragon.txt
+            - name: Read file
+              run:  cat dragon.txt
+            - name: list file
+              run:  ls -ltra
+            
